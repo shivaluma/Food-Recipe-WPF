@@ -214,6 +214,7 @@ namespace Food_Recipe_Appplication
         {
             detailScreen = new RecipeDetailsPage(temp);
             detailScreen.Show();
+            e.Handled = true;
         }
 
 

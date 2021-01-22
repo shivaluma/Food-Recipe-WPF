@@ -215,7 +215,6 @@ namespace Food_Recipe_Appplication
 
         private void DetaisButton_Click(object sender, RoutedEventArgs e)
         {
-           
             detailScreen = new RecipeDetailsPage(temp);
             detailScreen.Show();
             e.Handled = true;

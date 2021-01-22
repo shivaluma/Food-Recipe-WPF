@@ -30,7 +30,7 @@
 
             </RowDefinition>
         </Grid.RowDefinitions>
-        <Grid  FlowDirection="RightToLeft" Background="#f4c2c2">
+        <Grid  FlowDirection="RightToLeft" Background="#fff">
 
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
                 <TextBlock FontWeight="Bold" x:Name="FoodName" FontSize="40"></TextBlock>
@@ -124,10 +124,7 @@
                             </ListView.ItemsPanel>
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <materialDesign:TransitioningContent>
-                                        <materialDesign:TransitioningContent.OpeningEffects>
-                                            <materialDesign:TransitionEffect  Kind="SlideInFromRight"/>
-                                        </materialDesign:TransitioningContent.OpeningEffects>
+                                   
 
                                         <Grid>
                                             <Grid.RowDefinitions>
@@ -145,7 +142,6 @@
                                             </Grid>
                                         </Grid>
 
-                                    </materialDesign:TransitioningContent>
 
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -154,7 +150,7 @@
 
 
 
-                        <StackPanel Grid.Row="2" Orientation="Horizontal" Name="ButtonPanel">
+                        <StackPanel Grid.Row="2" HorizontalAlignment="Stretch" Orientation="Horizontal" Name="ButtonPanel">
 
                         </StackPanel>
 

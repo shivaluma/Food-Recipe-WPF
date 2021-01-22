@@ -69,12 +69,16 @@
 
 
         <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#fff"  Width="170" Visibility="Collapsed">
+
+          
             <Button   Style="{DynamicResource MenuButtonStyle}"  Name="LeftMenuButton" Click="LeftMenuButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="25" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
                     <TextBlock VerticalAlignment="Center">Menu</TextBlock>
                 </StackPanel>
             </Button>
+
+           
             <Button  Background="#ff9800"  Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="25" Source="Icons/home-page.png" Margin="10 0 10 0"></Image>
@@ -111,15 +115,15 @@
             </Button >
 
             <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
-                <Image Height="25" Source="Icons/loupe.png"></Image>
-                <TextBox PreviewKeyUp="SearchBox_PreviewKeyUp" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="30" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="15" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
-                <ComboBox FontSize="15"  Name="OrderOptions" SelectionChanged="ComboBox_SelectionChanged" Width="190" Margin="20 0 0 0">
-                    <ComboBoxItem Name="AtoZ">Sort By Name A-Z</ComboBoxItem>
-                    <ComboBoxItem Name="ZtoA">Sort By Name Z-A</ComboBoxItem>
-                    <ComboBoxItem Name="DateDescending">Sort By Date Descending</ComboBoxItem>
-                    <ComboBoxItem Name="DateAscending">Sort By Date Ascending</ComboBoxItem>
+                <ComboBox FontSize="15"  x:Name="OrderOptions" SelectionChanged="ComboBox_SelectionChanged" Width="190" Margin="20,20,0,20">
+                    <ComboBoxItem x:Name="AtoZ" Content="Sort By Name A-Z"/>
+                    <ComboBoxItem x:Name="ZtoA" Content="Sort By Name Z-A"/>
+                    <ComboBoxItem x:Name="DateDescending" Content="Sort By Date Descending"/>
+                    <ComboBoxItem x:Name="DateAscending" Content="Sort By Date Ascending"/>
                 </ComboBox>
-                
+
+                <TextBox PreviewKeyUp="SearchBox_PreviewKeyUp" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" x:Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="30" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="15" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray" Text="Search"/>
+
             </StackPanel>
         </StackPanel>
 
@@ -146,7 +150,7 @@
                                     <StackPanel  Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
 
                                         <TextBlock Foreground="#000" ToolTip="{Binding FoodName}" FontSize="15" Margin="0 10 10 0" Text="{Binding FoodName,Converter={StaticResource recipeNameConvert}}"></TextBlock>
-                                        <materialDesign:PackIcon  Foreground="{Binding IsFavorite, Converter={StaticResource isfavoriteicon}}" Margin="0 6 0 0"  Cursor="Hand" PreviewMouseLeftButtonDown="PackIcon_PreviewMouseLeftButtonDown" Height="25" Width="25"  Kind="Heart"/>
+                                        <materialDesign:PackIcon  Foreground="{Binding IsFavorite, Converter={StaticResource isfavoriteicon}}" Margin="0 6 0 0"  Cursor="Hand" PreviewMouseLeftButtonDown="PackIcon_PreviewMouseLeftButtonDown" Height="25" Width="25"  Kind="Star"/>
                                        
                                     </StackPanel>
                                    

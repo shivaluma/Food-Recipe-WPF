@@ -9,34 +9,36 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        TextElement.FontSize="15" Height="650" Width="920" MouseDown="Window_MouseDown" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen"
+        TextElement.FontSize="15" Height="600" Width="600" MouseDown="Window_MouseDown" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen"
          WindowStyle="None">
     <Grid>
-        <Canvas>
-            <Canvas.Background>
-                <ImageBrush ImageSource="Data/SplashScreenImg/food.jpg"></ImageBrush>
-            </Canvas.Background>
-            <materialDesign:PackIcon Foreground="White" Kind="Idea" Canvas.Top="47" Height="53" Width="34" Canvas.Left="38"/>
-            <TextBlock Foreground="Orange" FontSize="45" Canvas.Left="77" Canvas.Top="47">Did you know?</TextBlock>
-            <TextBlock TextWrapping="Wrap" Width="400" Height="400" Name="info" FontSize="25" Foreground="White" Canvas.Left="77" Canvas.Top="121"></TextBlock>
+        <Border CornerRadius="60" BorderThickness="5">
+            <Canvas>
+                <Canvas.Background>
+                    <ImageBrush ImageSource="Data/SplashScreenImg/food_bg.jpg"></ImageBrush>
+                </Canvas.Background>
+                <materialDesign:PackIcon Foreground="Yellow" Kind="Idea" Canvas.Top="150" Height="53" Width="34" Canvas.Left="38"/>
+                <TextBlock Foreground="Green" FontSize="45" FontWeight="ExtraBold" TextAlignment="Center" Width="600" Canvas.Top="150">TIP FOR YOU</TextBlock>
+                <TextBlock TextWrapping="Wrap" Width="600" Height="200" Padding="20" Name="info" FontSize="25" Foreground="Black"  Canvas.Top="200"></TextBlock>
 
-            <Button Foreground="White" Name="SkipButton" Click="SkipButton_Click" Canvas.Left="811" Canvas.Top="20" Width="60" Height="20">
-                <StackPanel Orientation="Horizontal" Width="171">
-                    <materialDesign:PackIcon Kind="SkipForward" Width="18" RenderTransformOrigin="-0.236,0.875"/>
-                    <TextBlock  TextWrapping="Wrap" Margin="5 0 0 0" Height="20" Width="33"><Run Text="Skip"/></TextBlock>
-                </StackPanel>
-            </Button>
+                <Button Foreground="White" Background="Green" Name="SkipButton" Click="SkipButton_Click" Canvas.Left="500" Canvas.Top="20" Width="60" Height="20">
+                    <StackPanel Orientation="Horizontal" Width="171">
+                        <materialDesign:PackIcon Kind="SkipForward" Width="18" RenderTransformOrigin="-0.236,0.875"/>
+                        <TextBlock  TextWrapping="Wrap" Margin="5 0 0 0" Height="20" Width="33"><Run Text="Skip"/></TextBlock>
+                    </StackPanel>
+                </Button>
 
-            <ProgressBar Foreground="Gray" Background="White" x:Name="progress" Width="500"  Minimum="0" Maximum="5" Value="0" Height="6" Canvas.Left="198" Canvas.Top="594"/>
-            <CheckBox  Foreground="White" Width="171" Height="20" Canvas.Left="364" Canvas.Top="569" Checked="CheckBox_Checked">
-                <CheckBox.Resources>
+                <ProgressBar Foreground="Gray" Background="Black" x:Name="progress" Width="500"  Minimum="0" Maximum="5" Value="0" Height="6" Canvas.Left="50"  Canvas.Top="450"/>
+                <CheckBox  Foreground="Green" Width="171" Height="20" Canvas.Left="350" Canvas.Top="400" Checked="CheckBox_Checked">
+                    <CheckBox.Resources>
 
-                    <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
+                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="Green"/>
 
-                    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="Green"/>
-                </CheckBox.Resources> Never show this again
-            </CheckBox>
-        </Canvas>
+                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="Red"/>
+                    </CheckBox.Resources> Never show this again
+                </CheckBox>
+            </Canvas>
+        </Border>
     </Grid>
     <Window.Resources>
         <Style TargetType="Button">
