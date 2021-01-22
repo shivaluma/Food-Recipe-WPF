@@ -322,24 +322,13 @@ namespace Food_Recipe_Appplication
                         recipe.FoodName = AddNameRecipeBox.Text;
                         recipe.MainVideoLink = VideoLinkBox.Text;
                         recipe.Interesting_infomation = InterestingInfoBox.Text;
-                        if (Category.Text == "Dry Food")
-                        {
-                            recipe.Category = "Dry Food";
-                        }
-                        else if (Category.Text == "Water Dish")
-                        {
-                            recipe.Category = "Water Dish";
-                        }
-                        else
-                        {
-                            recipe.Category = "Drink";
-                        }
+                        
                         IngredientsString = DescriptionBox.Text;
                         pathList.Add(filePath);
                         AddNameRecipeBox.Focusable = false;
                         VideoLinkBox.Focusable = false;
                         InterestingInfoBox.Focusable = false;
-                        Category.IsEnabled = false;
+                    
                     }
 
                 }
