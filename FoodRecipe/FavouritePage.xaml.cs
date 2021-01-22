@@ -23,7 +23,7 @@ namespace Food_Recipe_Appplication
     /// Interaction logic for FavouritePage.xaml
     /// </summary>
     /// 
-   
+
     public partial class FavouritePage : Page
     {
         private RecipesList _favoriteList = new RecipesList();
@@ -46,7 +46,7 @@ namespace Food_Recipe_Appplication
             SizeChanged += FavouritePage_SizeChanged;
             _favoriteList = favoriteList;
             recipeList = favoriteList;
-            _favoriteList = _favoriteList.SearchFavoriteRecipes(); 
+            _favoriteList = _favoriteList.SearchFavoriteRecipes();
         }
 
         private void FavouritePage_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -108,7 +108,7 @@ namespace Food_Recipe_Appplication
             var item = sender as ListViewItem;
             if (item != null)
             {
-                temp = (Recipe)item.Content;              
+                temp = (Recipe)item.Content;
             }
         }
 
@@ -150,28 +150,28 @@ namespace Food_Recipe_Appplication
             var option = config.AppSettings.Settings["DisplayOption"].Value;
             switch (option)
             {
-                case "Order by name A-Z":
+                case "Sort By Name A-Z":
                     {
                         AtoZ.IsSelected = true;
                         _favoriteList = _favoriteList.SortByName();
                         ChangeBindingList(_favoriteList);
                         break;
                     }
-                case "Order by name Z-A":
+                case "Sort By Name Z-A":
                     {
                         ZtoA.IsSelected = true;
                         _favoriteList = _favoriteList.SortByNameDescending();
                         ChangeBindingList(_favoriteList);
                         break;
                     }
-                case "Order by date descending":
+                case "Sort By Date Descending":
                     {
                         DateDescending.IsSelected = true;
                         _favoriteList = _favoriteList.SortByDateDescending();
                         ChangeBindingList(_favoriteList);
                         break;
                     }
-                case "Order by date ascending":
+                case "Sort By Date Ascending":
                     {
                         DateAscending.IsSelected = true;
                         _favoriteList = _favoriteList.SortByDate();
@@ -199,7 +199,7 @@ namespace Food_Recipe_Appplication
             icon.Foreground = Brushes.Pink;
             Debug.WriteLine(temp.FoodName);
             foreach (var recipe in _favoriteList)
-            { 
+            {
                 if (recipe.FoodName == temp.FoodName)
                 {
                     recipe.ToggleFavorite();
@@ -214,12 +214,13 @@ namespace Food_Recipe_Appplication
         {
             detailScreen = new RecipeDetailsPage(temp);
             detailScreen.Show();
+            e.Handled = true;
         }
 
 
 
         private async void SearchBox_PreviewKeyUp(object sender, KeyEventArgs e)
-        { 
+        {
             string key = (sender as TextBox).Text;
             if (key == "")
             {
@@ -247,7 +248,7 @@ namespace Food_Recipe_Appplication
                 int numberOfPage = len / number + (len % number == 0 ? 0 : 1);
                 maxPage = numberOfPage;
                 if (numberOfPage != 0)
-                {                 
+                {
                     int temp = numberOfPage < maxButtonPerPage ? numberOfPage : maxButtonPerPage;
                     ChangeListButton(1, temp);
                 }
@@ -376,9 +377,9 @@ namespace Food_Recipe_Appplication
             }
         }
 
-     
 
-      
+
+
 
 
         private void CategoryButton_Click(object sender, RoutedEventArgs e)

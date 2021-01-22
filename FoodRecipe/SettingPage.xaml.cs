@@ -135,7 +135,7 @@ namespace Food_Recipe_Appplication
                 {
                     invalidNofication.Visibility = Visibility.Visible;
                     checkImg.Visibility = Visibility.Collapsed;
-                    message.Text = "Number have to less than 11 and bigger than 0!!!";
+                    message.Text = "Number have to in range 1-10!!!";
                 }
             }
 

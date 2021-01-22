@@ -16,8 +16,10 @@
       d:DesignHeight="800" d:DesignWidth="1000"
       Title="AddRecipePage">
 	<DockPanel>
-        <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#ffc0cb"  Width="170">
-            <Button  Style="{DynamicResource MenuButtonStyle}"  Name="LeftMenuButton" Click="LeftMenuButton_Click">
+
+        <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#fff"  Width="170">
+            <Button   Style="{DynamicResource MenuButtonStyle}"  Name="LeftMenuButton" Click="LeftMenuButton_Click">
+
                 <StackPanel Orientation="Horizontal">
                     <Image Height="25" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
                     <TextBlock VerticalAlignment="Center">Menu</TextBlock>
@@ -35,16 +37,11 @@
                     <TextBlock VerticalAlignment="Center">Favourite</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Name="CategoryButton" Click="CategoryButton_Click" Style="{DynamicResource MenuButtonStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <Image Height="25" Source="Icons/category.png" Margin="10 0 10 0"></Image>
-                    <TextBlock VerticalAlignment="Center">Categories</TextBlock>
-                </StackPanel>
-            </Button>
-            <Button Background="#ed81a1"  Name="AddRecipeButton"  Style="{DynamicResource MenuButtonStyle}">
+          
+            <Button Background="#ff9800"  Name="AddRecipeButton"  Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="25" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
-                    <TextBlock VerticalAlignment="Center">Add recpie</TextBlock>
+                    <TextBlock VerticalAlignment="Center">Add recipe</TextBlock>
                 </StackPanel>
             </Button>
             <Button Name="SettingButton" Click="SettingButton_Click" Style="{DynamicResource MenuButtonStyle}">
@@ -54,7 +51,7 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#f4c2c2" Height="70">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#fff" Height="70">
             <Button Visibility="Collapsed" VerticalContentAlignment="Center"  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="25" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
@@ -68,10 +65,7 @@
             </StackPanel>
         </StackPanel>
 
-        <materialDesign:TransitioningContent>
-            <materialDesign:TransitioningContent.OpeningEffects>
-                <materialDesign:TransitionEffect Kind="SlideInFromRight" />
-            </materialDesign:TransitioningContent.OpeningEffects>
+     
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
@@ -88,7 +82,7 @@
                     <StackPanel Grid.Row="0" Grid.Column="0">
                         <TextBox FontSize="25" Margin="2" Name="AddNameRecipeBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight"  GotFocus="AddNameRecipeBox_GotFocus" LostFocus="AddNameRecipeBox_LostFocus" Foreground="Gray">Recipe name*</TextBox>
                         <TextBox FontSize="25" Margin="2" Grid.Column="1" Name="VideoLinkBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight"  GotFocus="VideoLinkBox_GotFocus" LostFocus="VideoLinkBox_LostFocus" Foreground="Gray" TextChanged="VideoLinkBox_TextChanged">Video link</TextBox>
-                        <TextBox TextWrapping="Wrap" FontSize="25" Margin="2" Grid.Row="1" Name="InterestingInfoBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" GotFocus="InterestingInfoBox_GotFocus" LostFocus="InterestingInfoBox_LostFocus" Foreground="Gray">Interesting infomation about this food</TextBox>
+                        <TextBox FontSize="25" Margin="2" Grid.Row="1" Name="InterestingInfoBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" GotFocus="InterestingInfoBox_GotFocus" LostFocus="InterestingInfoBox_LostFocus" Foreground="Gray">Interesting infomation about this food</TextBox>
                         <TextBlock HorizontalAlignment="Center" FontSize="13" Foreground="red" VerticalAlignment="Center">
                 Fields marked with * are required
                         </TextBlock>
@@ -141,7 +135,7 @@
                 </StackPanel>
             </Grid>
 
-        </materialDesign:TransitioningContent>
+    
     </DockPanel>
 	<Page.Resources>
         <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
@@ -162,7 +156,7 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#ed81a1"/>
+                    <Setter Property="Background" Value="#ff9800"/>
                 </Trigger>
             </Style.Triggers>
 

@@ -17,7 +17,7 @@
       Title="SettingPage" Loaded="Page_Loaded">
     <Grid Focusable="False">
         <DockPanel>
-            <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#ffc0cb"  Width="170">
+            <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#fff"  Width="170">
                 <Button   Style="{DynamicResource MenuButtonStyle}"  Name="LeftMenuButton" Click="LeftMenuButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="25" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
@@ -36,19 +36,14 @@
                         <TextBlock VerticalAlignment="Center">Favourite</TextBlock>
                     </StackPanel>
                 </Button>
-                <Button Name="CategoryButton" Click="CategoryButton_Click" Style="{DynamicResource MenuButtonStyle}">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Height="25" Source="Icons/category.png" Margin="10 0 10 0"></Image>
-                        <TextBlock VerticalAlignment="Center">Categories</TextBlock>
-                    </StackPanel>
-                </Button>
+              
                 <Button Click="AddRecipeButton_Click"  Name="AddRecipeButton"  Style="{DynamicResource MenuButtonStyle}">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="25" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
-                        <TextBlock VerticalAlignment="Center">Add recpie</TextBlock>
+                        <TextBlock VerticalAlignment="Center">Add recipe</TextBlock>
                     </StackPanel>
                 </Button>
-                <Button Background="#ed81a1" Name="SettingButton"  Style="{DynamicResource MenuButtonStyle}">
+                <Button Background="#ff9800" Name="SettingButton"  Style="{DynamicResource MenuButtonStyle}">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="25" Source="Icons/settings.png" Margin="10 0 10 0"></Image>
                         <TextBlock VerticalAlignment="Center">Settings</TextBlock>
@@ -56,7 +51,7 @@
                 </Button>
             </StackPanel>
 
-            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#f4c2c2" Height="70">
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#fff" Height="70">
                 <Button Visibility="Collapsed" VerticalContentAlignment="Center"  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="25" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
@@ -69,12 +64,7 @@
                     <TextBlock FontWeight="DemiBold" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center">Food Recipe</TextBlock>
                 </StackPanel>
             </StackPanel>
-            <materialDesign:TransitioningContent Focusable="False">
-                <materialDesign:TransitioningContent.OpeningEffects>
-                    <materialDesign:TransitionEffect Kind="SlideInFromRight" />
-
-                </materialDesign:TransitioningContent.OpeningEffects>
-
+        
                 <Grid Focusable="False">
                     <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -93,7 +83,7 @@
                         <Grid Grid.Row="1" Margin="30 20 0 0" HorizontalAlignment="Left">
 
                             <StackPanel  Height="80" Margin="0,0,0.4,0" VerticalAlignment="Top">
-                                <TextBlock FontSize="14"  Width="350" >Number of food display each page on homepage</TextBlock>
+                                <TextBlock FontSize="14"  Width="350" >Number of item to show (from 1 to 10)</TextBlock>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  FontSize="13"  materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.5" Background="White" BorderBrush="Black"  MouseDown="numberDisplay_MouseDown" Keyboard.KeyDown="numberDisplay_KeyDown" Name="numberDisplay" PreviewTextInput="numberDisplay_PreviewTextInput" Width="40" Height="22" Margin="0,8,10,0"/>
                                     <Image Name="checkImg" Margin="0 10 0 0" Width="20" Source="Icons/check.png"></Image>
@@ -116,7 +106,7 @@
 
                     </Grid>
           
-            </materialDesign:TransitioningContent>
+         
         </DockPanel>
     </Grid>
     <Page.Resources>
@@ -138,7 +128,7 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#ed81a1"/>
+                    <Setter Property="Background" Value="#ff9800"/>
                 </Trigger>
             </Style.Triggers>
 
