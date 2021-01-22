@@ -173,52 +173,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\loupe.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\menu.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\favourite.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\home-page.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\add-file.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\settings.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\next.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\alert.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\check.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\add-image.png" />
-    <Resource Include="Icons\checked.png" />
-    <Resource Include="Icons\circle-shape.png" />
-    <Resource Include="Icons\left-arrow.png" />
-    <Resource Include="Icons\right-arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="XMLFiles\Recipes.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -291,18 +245,9 @@
     <Resource Include="Data\SplashScreenImg\food.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\unknown.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Data\Images\unknown.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\shutdown.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\category.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Images\Bún Bò Huế\img0.png">
@@ -591,13 +536,35 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Data\SplashScreenImg\food_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\unknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\home-page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\add-file.png" />
+    <Resource Include="Icons\add-image.png" />
+    <Resource Include="Icons\alert.png" />
+    <Resource Include="Icons\category.png" />
+    <Resource Include="Icons\check.png" />
+    <Resource Include="Icons\checked.png" />
+    <Resource Include="Icons\circle-shape.png" />
+    <Resource Include="Icons\icon.ico" />
+    <Resource Include="Icons\left-arrow.png" />
+    <Resource Include="Icons\loupe.png" />
+    <Resource Include="Icons\menu.png" />
+    <Resource Include="Icons\right-arrow.png" />
+    <Resource Include="Icons\settings.png" />
+    <Resource Include="Icons\shutdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\favourite.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />

@@ -63,7 +63,7 @@
             </Button >
 
             <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
-                <materialDesign:PackIcon Kind="Food" Height="60" Width="63"/>
+                <materialDesign:PackIcon Foreground="PaleVioletRed" Kind="FoodApple" Height="60" Width="63"/>
                 <TextBlock FontWeight="DemiBold" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center">Food Recipe</TextBlock>
             </StackPanel>
         </StackPanel>
@@ -92,40 +92,30 @@
                         <TextBlock HorizontalAlignment="Center" FontSize="13" Foreground="red" VerticalAlignment="Center">
                 Fields marked with * are required
                         </TextBlock>
-                        <Button VerticalAlignment="Center" Style="{DynamicResource GirdButtonStyle}" x:Name="SaveButton" Click="SaveButton_Click" Margin="0,20,0,0" Width="80" Height="80">
+                        <Button Background="AliceBlue" VerticalAlignment="Center" Style="{DynamicResource GirdButtonStyle}" x:Name="SaveButton" Click="SaveButton_Click" Margin="0,20,0,0" Width="100" Height="100">
                             <StackPanel Orientation="Vertical">
-                                <Image Source="Icons/checked.png" Width="30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                <TextBlock FontSize="13" Text="Save" Margin="0,5,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <Image Source="Icons/checked.png" Width="60" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock FontSize="20" FontWeight="Bold" Text="Save" Margin="0,5,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </StackPanel>
-                            <Button.Background >
-                                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                                    <GradientStop Color="Orange" Offset="0"/>
-                                    <GradientStop Color="Yellow" Offset="1"/>
-                                </LinearGradientBrush>
-                            </Button.Background>
+                           
                         </Button>
                     </StackPanel>
                     
                         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
                             <Image Margin="10" x:Name="RecipeImage" Width="300" Height="300" Source="Icons/unknown.png"></Image>
-                            <Button Style="{DynamicResource GirdButtonStyle}" x:Name="AddImageButton" Click="AddImage_Click"  Width="80" Height="80" Margin="20,0,0,0">
+                            <Button Background="AliceBlue" Style="{DynamicResource GirdButtonStyle}" x:Name="AddImageButton" Click="AddImage_Click"  Width="80" Height="80" Margin="20,0,0,0">
                                 <StackPanel Orientation="Vertical">
                                     <Image Source="Icons/add-image.png" Width="30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBlock FontSize="13" Text="Add Image" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 </StackPanel>
-                                <Button.Background>
-                                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                                        <GradientStop Color="Orange" Offset="0"/>
-                                        <GradientStop Color="Yellow" Offset="1"/>
-                                    </LinearGradientBrush>
-                                </Button.Background>
+                               
                             </Button>
                         </StackPanel>
                     
                 </Grid>
 
                 <StackPanel Orientation="Vertical" Grid.Row="1">
-                    <TextBox Height="200" Margin="2" Name="DescriptionBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" FontSize="25" GotFocus="DescriptionBox_GotFocus" LostFocus="DescriptionBox_LostFocus" Foreground="Gray" TextWrapping="Wrap" AcceptsReturn="True" TextChanged="DescriptionBox_TextChanged">Input ingredients (press Enter after a ingredients)*</TextBox>
+                    <TextBox Height="200" Margin="2" Name="DescriptionBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" FontSize="25" GotFocus="DescriptionBox_GotFocus" LostFocus="DescriptionBox_LostFocus" Foreground="Gray" TextWrapping="Wrap" AcceptsReturn="True" TextChanged="DescriptionBox_TextChanged">Input ingredients of your recipe*</TextBox>
                     <TextBlock HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="Green">Step</TextBlock>
                     <Grid Width="400">
                         <Grid.ColumnDefinitions>
