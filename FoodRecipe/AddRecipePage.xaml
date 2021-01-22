@@ -16,7 +16,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddRecipePage">
 	<DockPanel>
-        <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#ffc0cb"  Width="170">
+        <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#fff"  Width="170">
             <Button   Style="{DynamicResource MenuButtonStyle}"  Name="LeftMenuButton" Click="LeftMenuButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="25" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
@@ -35,16 +35,11 @@
                     <TextBlock VerticalAlignment="Center">Favourite</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Name="CategoryButton" Click="CategoryButton_Click" Style="{DynamicResource MenuButtonStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <Image Height="25" Source="Icons/category.png" Margin="10 0 10 0"></Image>
-                    <TextBlock VerticalAlignment="Center">Categories</TextBlock>
-                </StackPanel>
-            </Button>
-            <Button Background="#ed81a1"  Name="AddRecipeButton"  Style="{DynamicResource MenuButtonStyle}">
+          
+            <Button Background="#ff9800"  Name="AddRecipeButton"  Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="25" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
-                    <TextBlock VerticalAlignment="Center">Add recpie</TextBlock>
+                    <TextBlock VerticalAlignment="Center">Add recipe</TextBlock>
                 </StackPanel>
             </Button>
             <Button Name="SettingButton" Click="SettingButton_Click" Style="{DynamicResource MenuButtonStyle}">
@@ -163,7 +158,7 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#ed81a1"/>
+                    <Setter Property="Background" Value="#ff9800"/>
                 </Trigger>
             </Style.Triggers>
 

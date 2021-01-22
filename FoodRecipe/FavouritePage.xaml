@@ -43,7 +43,7 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#ed81a1"/>
+                    <Setter Property="Background" Value="#ff9800"/>
                 </Trigger>
             </Style.Triggers>
 
@@ -67,7 +67,7 @@
     </Page.Resources>
     <DockPanel>
 
-        <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#ffc0cb"  Width="170">
+        <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#fff"  Width="170">
             <Button   Style="{DynamicResource MenuButtonStyle}"  Name="LeftMenuButton" Click="LeftMenuButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="25" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
@@ -80,22 +80,17 @@
                     <TextBlock VerticalAlignment="Center">Home</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Background="#ed81a1" Name="FavoriteButton"  Style="{DynamicResource MenuButtonStyle}">
+            <Button Background="#ff9800" Name="FavoriteButton"  Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="25" Source="Icons/favourite.png" Margin="10 0 10 0"></Image>
                     <TextBlock VerticalAlignment="Center">Favourite</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Name="CategoryButton" Click="CategoryButton_Click" Style="{DynamicResource MenuButtonStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <Image Height="25" Source="Icons/category.png" Margin="10 0 10 0"></Image>
-                    <TextBlock VerticalAlignment="Center">Categories</TextBlock>
-                </StackPanel>
-            </Button>
+          
             <Button Name="AddRecipeButton" Click="AddRecipeButton_Click"  Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="25" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
-                    <TextBlock VerticalAlignment="Center">Add recpie</TextBlock>
+                    <TextBlock VerticalAlignment="Center">Add recipe</TextBlock>
                 </StackPanel>
             </Button>
             <Button Name="SettingButton" Click="SettingButton_Click" Style="{DynamicResource MenuButtonStyle}">
@@ -106,7 +101,7 @@
             </Button>
         </StackPanel>
 
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#f4c2c2" Height="70">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#fff" Height="70">
             <Button Visibility="Collapsed" VerticalContentAlignment="Center"  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="25" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
@@ -118,10 +113,10 @@
                 <Image Height="25" Source="Icons/loupe.png"></Image>
                 <TextBox PreviewKeyUp="SearchBox_PreviewKeyUp" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="30" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="15" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
                 <ComboBox FontSize="15"  Name="OrderOptions" SelectionChanged="ComboBox_SelectionChanged" Width="190" Margin="20 0 0 0">
-                    <ComboBoxItem Name="AtoZ">Order by name A-Z</ComboBoxItem>
-                    <ComboBoxItem Name="ZtoA">Order by name Z-A</ComboBoxItem>
-                    <ComboBoxItem Name="DateDescending">Order by date descending</ComboBoxItem>
-                    <ComboBoxItem Name="DateAscending">Order by date ascending</ComboBoxItem>
+                    <ComboBoxItem Name="AtoZ">Sort By Name A-Z</ComboBoxItem>
+                    <ComboBoxItem Name="ZtoA">Sort By Name Z-A</ComboBoxItem>
+                    <ComboBoxItem Name="DateDescending">Sort By Date Descending</ComboBoxItem>
+                    <ComboBoxItem Name="DateAscending">Sort By Date Ascending</ComboBoxItem>
                 </ComboBox>
 
             </StackPanel>
@@ -139,33 +134,24 @@
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <materialDesign:TransitioningContent>
-                            <materialDesign:TransitioningContent.OpeningEffects>
-                                <materialDesign:TransitionEffect Kind="SlideInFromRight" />
-                            </materialDesign:TransitioningContent.OpeningEffects>
-                            <Border BorderThickness="0.6" BorderBrush="Orange" CornerRadius="6">
-                                <StackPanel  MouseLeave="panel_MouseLeave" Margin="5"  MouseEnter="StackPanel_MouseEnter"  Name="panel">
-                                    <Border Width="250" Height="200">
-                                        <Border.Background >
-                                            <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" x:Name="FoodImage" ImageSource="{Binding MainPictureName,Converter={StaticResource convertImageLink}}"></ImageBrush>
-                                        </Border.Background>
-                                    </Border>
-                                    <StackPanel  Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
+                        <Button Background="#fff"  Width="300" Height="250" Name="DetaisButton" Click="DetaisButton_Click" >
 
-                                        <TextBlock ToolTip="{Binding FoodName}" FontSize="15" Margin="0 10 10 0" Text="{Binding FoodName,Converter={StaticResource recipeNameConvert}}"></TextBlock>
-                                        <materialDesign:PackIcon ToolTip="Remove from favourite" Foreground="{Binding IsFavorite, Converter={StaticResource isfavoriteicon}}" Margin="0 6 0 0"  Cursor="Hand" PreviewMouseLeftButtonDown="PackIcon_PreviewMouseLeftButtonDown" Height="25" Width="25"  Kind="Heart"/>
-                                        <Button Name="DetaisButton" Click="DetaisButton_Click" Margin="10 0 0 0">Details</Button>
-                                    </StackPanel>
-                                    <Border BorderThickness="0 0.6 0 0" BorderBrush="Orange">
-                                        <StackPanel  Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
-                                            <TextBlock Padding="0 10 0 0" VerticalAlignment="Center" Height="35" HorizontalAlignment="Center" Text="{Binding Category}"></TextBlock>
+                            <StackPanel Name="panel">
+                                <Border Width="250" Height="200">
+                                    <Border.Background >
+                                        <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" x:Name="FoodImage" ImageSource="{Binding MainPictureName,Converter={StaticResource convertImageLink}}"></ImageBrush>
+                                    </Border.Background>
+                                </Border>
+                                <StackPanel  Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
 
-                                        </StackPanel>
-                                    </Border>
+                                    <TextBlock Foreground="#000" ToolTip="{Binding FoodName}" FontSize="15" Margin="0 10 10 0" Text="{Binding FoodName,Converter={StaticResource recipeNameConvert}}"></TextBlock>
+                                    <materialDesign:PackIcon  Foreground="{Binding IsFavorite, Converter={StaticResource isfavoriteicon}}" Margin="0 6 0 0"  Cursor="Hand" PreviewMouseLeftButtonDown="PackIcon_PreviewMouseLeftButtonDown" Height="25" Width="25"  Kind="Heart"/>
+
                                 </StackPanel>
-                            </Border>
-                        </materialDesign:TransitioningContent>
 
+                            </StackPanel>
+
+                        </Button>
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 <ListView.ItemContainerStyle>

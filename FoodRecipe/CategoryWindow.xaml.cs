@@ -48,28 +48,28 @@ namespace Food_Recipe_Appplication
             var option = config.AppSettings.Settings["DisplayOption"].Value;
             switch (option)
             {
-                case "Order by name A-Z":
+                case "Sort By Name A-Z":
                     {
                         AtoZ.IsSelected = true;
                         recipeList = recipeList.SortByName();
                         ChangeBindingList(recipeList);
                         break;
                     }
-                case "Order by name Z-A":
+                case "Sort By Name Z-A":
                     {
                         ZtoA.IsSelected = true;
                         recipeList = recipeList.SortByNameDescending();
                         ChangeBindingList(recipeList);
                         break;
                     }
-                case "Order by date descending":
+                case "Sort By Date Descending":
                     {
                         DateDescending.IsSelected = true;
                         recipeList = recipeList.SortByDateDescending();
                         ChangeBindingList(recipeList);
                         break;
                     }
-                case "Order by date ascending":
+                case "Sort By Date Ascending":
                     {
                         DateAscending.IsSelected = true;
                         recipeList = recipeList.SortByDate();
@@ -111,7 +111,7 @@ namespace Food_Recipe_Appplication
                 button.Background = Brushes.White;
             };
             BrushConverter bc = new BrushConverter();
-            (sender as Button).Background = (Brush)bc.ConvertFrom("#ed81a1");
+            (sender as Button).Background = (Brush)bc.ConvertFrom("#ff9800");
             var tokens = pageNumber.Split(separator, StringSplitOptions.None);
             int nextPage = int.Parse(tokens[1]);
             currentPage = nextPage;
@@ -146,8 +146,7 @@ namespace Food_Recipe_Appplication
 
         private void DetaisButton_Click(object sender, RoutedEventArgs e)
         {
-            Window detailScreen = new RecipeDetailsPage(temp);
-            detailScreen.Show();
+           
         }
 
             
@@ -172,25 +171,25 @@ namespace Food_Recipe_Appplication
             var tokens = condition.Split(new string[] { ": " }, StringSplitOptions.None);
             switch (tokens[tokens.Length - 1])
             {
-                case "Order by name A-Z":
+                case "Sort By Name A-Z":
                     {
                         recipeList = recipeList.SortByName();
                         ChangeBindingList(recipeList);
                         break;
                     }
-                case "Order by name Z-A":
+                case "Sort By Name Z-A":
                     {
                         recipeList = recipeList.SortByNameDescending();
                         ChangeBindingList(recipeList);
                         break;
                     }
-                case "Order by date descending":
+                case "Sort By Date Descending":
                     {
                         recipeList = recipeList.SortByDateDescending();
                         ChangeBindingList(recipeList);
                         break;
                     }
-                case "Order by date ascending":
+                case "Sort By Date Ascending":
                     {
                         recipeList = recipeList.SortByDate();
                         ChangeBindingList(recipeList);
@@ -262,7 +261,7 @@ namespace Food_Recipe_Appplication
                     if (button.Content.ToString() == (currentPage).ToString())
                     {
                         BrushConverter bc = new BrushConverter();
-                        button.Background = (Brush)bc.ConvertFrom("#ed81a1");
+                        button.Background = (Brush)bc.ConvertFrom("#ff9800");
                     }
                     else
                     {
@@ -298,7 +297,7 @@ namespace Food_Recipe_Appplication
                     if (button.Content.ToString() == (currentPage).ToString())
                     {
                         BrushConverter bc = new BrushConverter();
-                        button.Background = (Brush)bc.ConvertFrom("#ed81a1");
+                        button.Background = (Brush)bc.ConvertFrom("#ff9800");
                     }
                     else
                     {
@@ -346,7 +345,7 @@ namespace Food_Recipe_Appplication
             {
                 Button firstButton = (Button)SkipButton.Children[1];
                 BrushConverter bc = new BrushConverter();
-                firstButton.Background = (Brush)bc.ConvertFrom("#ed81a1");
+                firstButton.Background = (Brush)bc.ConvertFrom("#ff9800");
             }
             catch (Exception ex)
             {
